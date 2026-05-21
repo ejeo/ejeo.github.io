@@ -7,7 +7,6 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
-		
 			/* Custom styles for the interactive JavaScript feature widget */
 			.matcher-container {
 				background: rgba(255, 255, 255, 0.07);
@@ -40,6 +39,49 @@
 				border-left: 5px solid #4a90e2;
 				animation: fadeIn 0.5s ease;
 			}
+			
+			/* Custom Accordion Styling for FAQ Component */
+			.faq-section {
+				margin-top: 35px;
+				border-top: 1px solid rgba(255, 255, 255, 0.15);
+				padding-top: 25px;
+			}
+			.faq-details {
+				margin-bottom: 15px;
+				background: rgba(255, 255, 255, 0.03);
+				padding: 12px 20px;
+				border-radius: 6px;
+				border: 1px solid rgba(255, 255, 255, 0.05);
+				cursor: pointer;
+				transition: background 0.3s ease;
+			}
+			.faq-details:hover {
+				background: rgba(255, 255, 255, 0.07);
+			}
+			.faq-summary {
+				font-weight: bold;
+				color: #4a90e2;
+				outline: none;
+				list-style: none;
+			}
+			.faq-summary::-webkit-details-marker {
+				display: none;
+			}
+			.faq-content {
+				margin-top: 10px;
+				font-size: 0.95em;
+				line-height: 1.5;
+				color: #e0e0e0;
+			}
+
+			.autosave-indicator {
+				font-size: 0.8em;
+				color: #4af2a1;
+				display: none;
+				margin-left: 10px;
+				vertical-align: middle;
+			}
+
 			@keyframes fadeIn {
 				from { opacity: 0; transform: translateY(5px); }
 				to { opacity: 1; transform: translateY(0); }
@@ -113,6 +155,18 @@
 
 								</div>
 							</section>
+
+							<section class="faq-section">
+								<h3>Frequently Asked Questions</h3>
+								<details class="faq-details">
+									<summary class="faq-summary">📡 Who is eligible to join the collective?</summary>
+									<p class="faq-content" style="color: #000000;">Undergraduates from all STEM disciplines who demonstrate a strong drive for independent academic inquiry, simulation workflows, or theoretical research are welcome to apply.</p>
+								</details>
+								<details class="faq-details">
+									<summary class="faq-summary">🧪 Are there core prerequisites for the Quantum track?</summary>
+									<p class="faq-content" style="color: #000000;">A foundational understanding of Linear Algebra and Vector Math is highly helpful, though active peer-led mentorship frameworks are available across all divisions.</p>
+								</details>
+							</section>
 						</article>
 
 						<article id="tracks" class="panel">
@@ -142,6 +196,29 @@
 								<p>
 									A glimpse into our ongoing undergraduate whitepapers, presentation posters, and simulation sandbox environments developed during the academic term.
 								</p>
+
+								<div class="row" style="text-align: center; margin-bottom: 40px;">
+									<div class="col-4 col-12-small">
+										<div style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1);">
+											<h3 style="font-size: 2.2em; color: #4a90e2; margin-bottom: 5px; font-weight: 800;">14+</h3>
+											<p style="color: #4a90e2; text-transform: uppercase; font-size: 0.75em; letter-spacing: 2px; color: #000000; margin: 0;">Active Papers</p>
+										</div>
+									</div>
+									<div class="col-4 col-12-small">
+										<div style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1);">
+											<h3 style="font-size: 2.2em; color: #4a90e2; margin-bottom: 5px; font-weight: 800;">32</h3>
+											<p style="text-transform: uppercase; font-size: 0.75em; letter-spacing: 2px; color: #000000; margin: 0;">Club Alumni</p>
+										</div>
+									</div>
+									<div class="col-4 col-12-small">
+										<div style="background: rgba(255,255,255,0.03); padding: 20px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1);">
+											<h3 style="font-size: 2.2em; color: #4a90e2; margin-bottom: 5px; font-weight: 800;">3</h3>
+											<p style="text-transform: uppercase; font-size: 0.75em; letter-spacing: 2px; color: #000000; margin: 0;">Research Tracks</p>
+										</div>
+									</div>
+								</div>
+
+							
 								<section>
 									<div class="row">
 										<div class="col-4 col-6-medium col-12-small">
@@ -168,7 +245,7 @@
 
 						<article id="contact" class="panel">
 								<header>
-									<h2>Connect With The Collective</h2>
+									<h2>Connect With The Collective <span id="autosaveStatus" class="autosave-indicator">✓ Saved Draft</span></h2>
 								</header>
 								<p style="margin-bottom: 20px;">
 									Ready to join or looking to collaborate? Drop a message to our administrative executive board. In-person inquiries can be directed to <strong>Suite 502, Vertex Science Block</strong>.
@@ -178,16 +255,16 @@
 									<div>
 										<div class="row">
 											<div class="col-6 col-12-medium">
-												<input type="text" name="name" placeholder="Fictional Applicant Name" required />
+												<input type="text" name="name" id="formName" placeholder="Fictional Applicant Name" required />
 											</div>
 											<div class="col-6 col-12-medium">
-												<input type="email" name="email" placeholder="Fictional Email Address" required />
+												<input type="email" name="email" id="formEmail" placeholder="Fictional Email Address" required />
 											</div>
 											<div class="col-12">
-												<input type="text" name="subject" placeholder="Academic Discipline / Field of Major" required />
+												<input type="text" name="subject" id="formSubject" placeholder="Academic Discipline / Field of Major" required />
 											</div>
 											<div class="col-12">
-												<textarea name="message" placeholder="Briefly outline your research interests or what you hope to achieve with Honams Science Masters Club...." rows="6" required></textarea>
+												<textarea name="message" id="formMessage" placeholder="Briefly outline your research interests or what you hope to achieve with Honams Science Masters Club...." rows="6" required></textarea>
 											</div>
 											<div class="col-12">
 												<input type="submit" value="Submit Application" />
@@ -206,17 +283,45 @@
 					</div>
 
 			</div>
-		<script>document.getElementById('join-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    alert('Fictional Application Sent! Thank you for applying to Honams Science Masters Club.');
-});</script>
+		
 		<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
 		<script>
+			// 1. Persistent Local Storage Application Forms Tracker Setup
+			const inputFields = ['formName', 'formEmail', 'formSubject', 'formMessage'];
+			inputFields.forEach(fieldId => {
+				const element = document.getElementById(fieldId);
+				
+				// Hydrate cached data if an active user session is found
+				if(localStorage.getItem(fieldId)) {
+					element.value = localStorage.getItem(fieldId);
+				}
+				
+				// Input event listener to trigger background sync updates
+				element.addEventListener('input', () => {
+					localStorage.setItem(fieldId, element.value);
+					showAutosaveTicker();
+				});
+			});
+
+			function showAutosaveTicker() {
+				const ticker = document.getElementById('autosaveStatus');
+				ticker.style.display = 'inline';
+				setTimeout(() => { ticker.style.display = 'none'; }, 1000);
+			}
+
+			// Clear form memory database backups entirely on true form processing execution
+			document.getElementById('join-form').addEventListener('submit', function(event) {
+				event.preventDefault();
+				alert('Fictional Application Sent! Thank you for applying to Honams Science Masters Club.');
+				localStorage.clear(); 
+				document.getElementById('join-form').reset();
+			});
+
 			function findMyTrack(trackId) {
 				var resultBox = document.getElementById('matcher-result');
 				resultBox.style.display = 'block';
@@ -247,6 +352,7 @@
 					                      '<p style="font-size: 0.85em; color: #555; font-style: italic; margin-top: 5px;">Use the Connect panel to register interest in this division.</p>';
 				}
 			}
+
 		</script>
 
 	</body>

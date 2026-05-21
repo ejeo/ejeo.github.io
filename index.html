@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Honams Science Masters Club. Science Collective | Home</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+		
+			/* Custom styles for the interactive JavaScript feature widget */
+			.matcher-container {
+				background: rgba(255, 255, 255, 0.07);
+				padding: 25px;
+				border-radius: 8px;
+				border: 1px solid rgba(255, 255, 255, 0.15);
+				margin-top: 20px;
+			}
+			.matcher-btn {
+				background-color: #4a90e2;
+				color: #fff !important;
+				border: none;
+				padding: 10px 20px;
+				margin: 5px;
+				border-radius: 4px;
+				cursor: pointer;
+				transition: background 0.3s ease;
+			}
+			.matcher-btn:hover {
+				background-color: #357abd;
+			}
+			#matcher-result {
+				margin-top: 20px;
+				padding: 15px;
+				border-radius: 6px;
+				display: none;
+				background: #ffffff;
+				color: #222222;
+				border-left: 5px solid #4a90e2;
+				animation: fadeIn 0.5s ease;
+			}
+			@keyframes fadeIn {
+				from { opacity: 0; transform: translateY(5px); }
+				to { opacity: 1; transform: translateY(0); }
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<div id="wrapper">
+
+				<nav id="nav">
+						<a href="#" class="icon solid fa-home"><span>Home</span></a>
+						<a href="#about" class="icon solid fa-info-circle"><span>About</span></a>
+						<a href="#tracks" class="icon solid fa-flask"><span>Tracks</span></a>
+						<a href="#work" class="icon solid fa-folder"><span>Research</span></a>
+						<a href="#contact" class="icon solid fa-envelope"><span>Join Us</span></a>
+					</nav>
+
+				<div id="main">
+
+						<article id="home" class="panel intro">
+								<header>
+									<h1>Honams Science Masters Club.</h1>
+									<p>The Advanced Science Collective</p>
+									<p style="font-size: 0.9em; color: #b2b2b2; margin-top: 10px;">
+										Pushing the boundaries of undergraduate research, interdisciplinary theory, and high-impact discovery.
+									</p>
+								</header>
+								<a href="#about" class="jumplink pic">
+									<span class="arrow icon solid fa-chevron-right"><span>Explore Collective</span></span>
+									<img src="images/me.jpg" alt="Honams Science Masters Club. Abstract Logo Asset" />
+								</a>
+							</article>
+
+						<article id="about" class="panel">
+								<header>
+									<h2>About Our Collective</h2>
+								</header>
+								<p>
+									Welcome to the <strong>Honams Science Masters Club. Science Collective</strong>. Founded on the principles of rigorous peer collaboration and cross-disciplinary synergy, we bridge the gap between textbook curriculum and foundational modern research. 
+								</p>
+								<p>
+									Whether your discipline lies within abstract field theories, complex biological frameworks, or computational engineering, our collective provides the structural launchpad for your academic goals. We host bi-weekly symposiums, fund exploratory student laboratory projects, and coordinate networking events with industry innovators.
+								</p>
+							</article>
+
+						<article id="tracks" class="panel">
+								<header>
+									<h2>Specialized Research Divisions</h2>
+								</header>
+								<p>
+									Our group operates across distinct specialized tracks, ensuring members collaborate with peers who share focused scientific interests.
+								</p>
+								
+								<div class="matcher-container">
+									<h3>Find Your Science Track Matcher</h3>
+									<p>Interact with our alignment matrix tool below to discover which Honams Science Masters Club. research division complements your academic pursuits:</p>
+									
+									<button type="button" class="matcher-btn" onclick="findMyTrack('quantum')">Quantum Physics & Theory</button>
+									<button type="button" class="matcher-btn" onclick="findMyTrack('synthetic')">Synthetic Biology & Systems</button>
+									<button type="button" class="matcher-btn" onclick="findMyTrack('compute')">Computational Mathematics</button>
+									
+									<div id="matcher-result"></div>
+								</div>
+							</article>
+
+						<article id="work" class="panel">
+								<header>
+									<h2>Active Research & Portfolios</h2>
+								</header>
+								<p>
+									A glimpse into our ongoing undergraduate whitepapers, presentation posters, and simulation sandbox environments developed during the academic term.
+								</p>
+								<section>
+									<div class="row">
+										<div class="col-4 col-6-medium col-12-small">
+											<a href="images/pic01.jpg" class="image fit"><img src="images/pic01.jpg" alt="Our final results"></a>
+										</div>
+										<div class="col-4 col-6-medium col-12-small">
+											<a href="images/pic02.jpg" class="image fit"><img src="images/pic02.jpg" alt="Having a general meeting"></a>
+										</div>
+										<div class="col-4 col-6-medium col-12-small">
+											<a href="images/pic03.jpg" class="image fit"><img src="images/pic03.jpg" alt="Writing experimental protocols"></a>
+										</div>
+										<div class="col-4 col-6-medium col-12-small">
+											<a href="images/pic04.jpg" class="image fit"><img src="images/pic04.jpg" alt="Carefully experimenting"></a>
+										</div>
+										<div class="col-4 col-6-medium col-12-small">
+											<a href="images/pic05.jpg" class="image fit"><img src="images/pic05.jpg" alt="Neural Networking Synaptic Node Model"></a>
+										</div>
+										<div class="col-4 col-6-medium col-12-small">
+											<a href="images/pic06.jpg" class="image fit"><img src="images/pic06.jpg" alt="Graphene Superlattice Conductivity Test"></a>
+										</div>
+									</div>
+								</section>
+							</article>
+
+						<article id="contact" class="panel">
+								<header>
+									<h2>Connect With The Collective</h2>
+								</header>
+								<p style="margin-bottom: 20px;">
+									Ready to join or looking to collaborate? Drop a message to our administrative executive board. In-person inquiries can be directed to <strong>Suite 502, Vertex Science Block</strong>.
+								</p>
+								<form id="join-form" action="#" method="post">
+									
+									<div>
+										<div class="row">
+											<div class="col-6 col-12-medium">
+												<input type="text" name="name" placeholder="Fictional Applicant Name" required />
+											</div>
+											<div class="col-6 col-12-medium">
+												<input type="email" name="email" placeholder="Fictional Email Address" required />
+											</div>
+											<div class="col-12">
+												<input type="text" name="subject" placeholder="Academic Discipline / Field of Major" required />
+											</div>
+											<div class="col-12">
+												<textarea name="message" placeholder="Briefly outline your research interests or what you hope to achieve with Honams Science Masters Club...." rows="6" required></textarea>
+											</div>
+											<div class="col-12">
+												<input type="submit" value="Submit Application" />
+											</div>
+										</div>
+									</div>
+								</form>
+							</article>
+
+					</div>
+
+				<div id="footer">
+						<ul class="copyright">
+							<li>&copy; Honams Science Masters Club. Science Collective. Fictional Entity Assignment Document.</li>
+							<li>Design Template Platform: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+
+			</div>
+		<script>document.getElementById('join-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('Fictional Application Sent! Thank you for applying to Honams Science Masters Club.');
+});</script>
+		<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+		<script>
+			function findMyTrack(trackId) {
+				var resultBox = document.getElementById('matcher-result');
+				resultBox.style.display = 'block';
+				
+				var alignmentData = {
+					'quantum': {
+						title: 'Quantum Physics & Theoretical Mechanics Division',
+						schedule: 'Tuesdays & Thursdays at 18:00',
+						focus: 'Focuses include subatomic particle simulations, quantum cryptography math, and superconductor exploration vectors.'
+					},
+					'synthetic': {
+						title: 'Synthetic Biology & Bio-Systems Wing',
+						schedule: 'Mondays at 17:30',
+						focus: 'Focuses include computational genomic sequencing, cellular structural modeling, and biomechatronic optimization.'
+					},
+					'compute': {
+						title: 'Computational Mathematics & Analytics Guild',
+						schedule: 'Wednesdays at 19:00',
+						focus: 'Focuses include algorithmic efficiency proofs, multi-dimensional geometric parsing, and stochastic dataset modeling.'
+					}
+				};
+				
+				var match = alignmentData[trackId];
+				if (match) {
+					resultBox.innerHTML = '<h4><strong>✔ Target Found: ' + match.title + '</strong></h4>' +
+					                      '<p style="margin: 8px 0;"><strong>Active Lab Meeting Times:</strong> ' + match.schedule + '</p>' +
+					                      '<p style="font-size: 0.95em; line-height: 1.4;">' + match.focus + '</p>' +
+					                      '<p style="font-size: 0.85em; color: #555; font-style: italic; margin-top: 5px;">Use the Connect panel to register interest in this division.</p>';
+				}
+			}
+		</script>
+
+	</body>
+</html>
